@@ -2,10 +2,10 @@ version: '3'
 
 services:
   pass-gym-pg:
-    image: bitnami/postgresql
-    port:
+    image: postgres
+    ports:
       - 5432:5432
     environment:
-      - POSTGRESQL_USERNAME=docker
-      - POSTGRESQL_PASSWORD=docker
-      - POSTGRESQL_DATABASE=gymdb
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=gymdb
