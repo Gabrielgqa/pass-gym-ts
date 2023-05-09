@@ -8,7 +8,9 @@
     "start": "node build/server.js",
     "build": "tsup src --out-dir build",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui"
   },
   "author": "GabrielGQA <gabrielgqa@gmail.com>",
   "license": "ISC",
@@ -17,6 +19,8 @@
     "@types/node": "18.16.3",
     "@typescript-eslint/eslint-plugin": "5.59.2",
     "@typescript-eslint/parser": "5.59.2",
+    "@vitest/coverage-c8": "0.31.0",
+    "@vitest/ui": "0.31.0",
     "eslint": "8.39.0",
     "prisma": "4.13.0",
     "tsup": "6.7.0",
