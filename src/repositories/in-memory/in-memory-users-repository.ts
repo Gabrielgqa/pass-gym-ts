@@ -1,8 +1,18 @@
 import { User, Prisma } from '@prisma/client';
-import { UserRepository } from '../users-repository';
+import { UsersRepository } from '../users-repository';
 
-export class InMemoryUsersRepository implements UserRepository {
+export class InMemoryUsersRepository implements UsersRepository {
     public items: User[] = [];
+
+    async findById(id: string): Promise<User | null> {
+        const user = this.items.find(item => item.id === id);
+
+        if(!user) {
+            return null;
+        }
+
+        return user;
+    }
 
     async findByEmail(email: string): Promise<User | null> {
         const user = this.items.find(item => item.email === email);
